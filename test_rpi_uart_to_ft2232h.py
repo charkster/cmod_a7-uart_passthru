@@ -18,12 +18,10 @@ ser.flushInput()  # flush input buffer, discarding all its contents
 ser.flushOutput() # flush output buffer, aborting current output and discard all that is in buffer
 
 num_bytes = 0
-while True:
+while (num_bytes < 11):
 	response = ser.read()
 	print("read data: {}".format(response))
 	num_bytes += 1
-	if (num_bytes >= 11):
-		break
 
 ser.write(b'Hello World')
 ser.close()
